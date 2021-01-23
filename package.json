@@ -6,6 +6,10 @@
   "license": "MIT",
   "main": "./lib/index.js",
   "module": "./lib/index.js",
+  "exports": {
+    "require": "./cjs/index.js",
+    "import": "./lib/index.js"
+  },
   "sideEffects": false,
   "type": "module",
   "types": "./lib/index.d.ts",
