@@ -2,7 +2,7 @@ _SpecRunner.html
 npm-debug.log
 node_modules/
 dist/
-lib/
+
 src/Grammar/dist/*
 src/**/*.js
 temp/
@@ -12,5 +12,4 @@ test/spec/core/*.js
 test/spec/platform/web/*.js
 test/support/**/*.js
 
-cjs/*
-!cjs/package.json
+
