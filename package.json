@@ -4,14 +4,9 @@
   "description": "A SIP library for JavaScript",
   "version": "0.18.1",
   "license": "MIT",
-  "main": "./lib/index.js",
+  "main": "./cjs/index.js",
   "module": "./lib/index.js",
-  "exports": {
-    "require": "./cjs/index.js",
-    "import": "./lib/index.js"
-  },
   "sideEffects": false,
-  "type": "module",
   "types": "./lib/index.d.ts",
   "homepage": "https://sipjs.com",
   "author": "OnSIP <developer@onsip.com> (https://sipjs.com/aboutus/)",

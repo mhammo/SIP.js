@@ -294,14 +294,7 @@ class Registerer {
                     if (!contact) {
                         throw new Error("Contact undefined");
                     }
-                    /* Adding host and port checks may break people not using contactName, so only check those
-                     * if the parameter is set. The server mucking with host and port is entirely legal,
-                     * so in cases where that occurs usage of contactName is currently broken.
-                     */
-                    if (contact.uri.user === this.userAgent.contact.uri.user &&
-                        (this.userAgent.configuration.contactName === "" ||
-                            (contact.uri.host === this.userAgent.contact.uri.host &&
-                                contact.uri.port === this.userAgent.contact.uri.port))) {
+                    if (contact.uri.user === this.userAgent.contact.uri.user) {
                         expires = Number(contact.getParam("expires"));
                         break;
                     }
