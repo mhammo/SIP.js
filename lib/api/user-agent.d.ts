@@ -107,6 +107,13 @@ export declare class UserAgent {
      */
     get userAgentCore(): UserAgentCore;
     /**
+     * Via header host and port
+     */
+    get via(): {
+        host: string;
+        port: number;
+    };
+    /**
      * The logger.
      */
     getLogger(category: string, label?: string): Logger;

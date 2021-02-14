@@ -348,6 +348,14 @@ export class UserAgent {
   }
 
   /**
+   * Via header host and port
+   */
+  public get via() {
+    const [host, port] = this.options.viaHost.split(':')
+    return { host, port: parseInt(port) }
+  }
+
+  /**
    * The logger.
    */
   public getLogger(category: string, label?: string): Logger {
@@ -944,7 +952,7 @@ export class UserAgent {
       // FIXME: This should be Transport check before we get here (Section 18).
       // Custom SIP.js check to drop responses if bad Via header.
       // This is port of SanityCheck.rfc3261_18_1_2().
-      if (message.via.host !== this.options.viaHost || message.via.port !== undefined) {
+      if (message.via.host !== this.via.host || message.via.port !== this.via.port) {
         this.logger.warn("Via sent-by in the response does not match UA Via host value. Dropping.");
         return;
       }
